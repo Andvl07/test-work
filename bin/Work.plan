@@ -1,3 +1,4 @@
+
 @startuml
 ' Style settings (optional)
 skinparam classAttributeIconSize 0
@@ -6,7 +7,6 @@ skinparam classAttributeIconSize 0
 'skinparam classStereotypeFontColor Black
 'skinparam classHeaderBackgroundColor LightBlue
 
-package geometry {
 
   class Point {
     - double x
@@ -58,6 +58,6 @@ package geometry {
   Figure <|-- Rectangle : extends
   Rectangle -- Point : contains
   Figure -- Point : contains
-}
+
 
 @enduml
