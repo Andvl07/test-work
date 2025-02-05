@@ -1,0 +1,64 @@
+
+@startuml
+' Style settings (optional)
+skinparam classAttributeIconSize 0
+'skinparam classBackgroundColor White
+'skinparam classBorderColor Black
+'skinparam classStereotypeFontColor Black
+'skinparam classHeaderBackgroundColor LightBlue
+
+package geometry {
+
+  class Point {
+    - double x
+    - double y
+    --
+    + Point(x: double, y: double)
+    + getX(): double
+    + getY(): double
+    + setCoordinates(x: double, y: double): void
+    + distanceTo(other: Point): double
+    + rotate(centerX: double, centerY: double, angleDegrees: double): void
+    + toString(): String
+  }
+
+  class LineSegment {
+    - Point point1
+    - Point point2
+    --
+    + LineSegment(point1: Point, point2: Point)
+    + getPoint1(): Point
+    + getPoint2(): Point
+    + length(): double
+    + toString(): String
+  }
+
+  abstract class Figure {
+    # List<Point> points
+    --
+    + Figure(points: List<Point>)
+    + {abstract} perimeter(): double
+    + rotate(angleDegrees: double): void
+    + getPoints(): List<Point>
+    + toString(): String
+  }
+
+  class Rectangle {
+    --
+    + Rectangle(point1: Point, point2: Point, point3: Point, point4: Point)
+    + perimeter(): double
+    + intersects(other: Rectangle): boolean
+  }
+
+  class Main {
+    + {static} main(args: String[]): void
+  }
+
+
+  LineSegment -- Point : contains
+  Figure <|-- Rectangle : extends
+  Rectangle -- Point : contains
+  Figure -- Point : contains
+}
+
+@enduml

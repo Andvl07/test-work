@@ -3,10 +3,10 @@ public class Point {
     private double y;
 
     /**
-     * Constructs a Point object with the given coordinates.
+     * Создает объект Point с заданными координатами.
      *
-     * @param x The x-coordinate of the point.
-     * @param y The y-coordinate of the point.
+     * @param x Координата x точки.
+     * @param y Координата y точки.
      */
     public Point(double x, double y) {
         this.x = x;
@@ -14,28 +14,28 @@ public class Point {
     }
 
     /**
-     * Gets the x-coordinate of the point.
+     * Возвращает координату x точки.
      *
-     * @return The x-coordinate.
+     * @return Координата x.
      */
     public double getX() {
         return x;
     }
 
     /**
-     * Gets the y-coordinate of the point.
+     * Возвращает координату y точки.
      *
-     * @return The y-coordinate.
+     * @return Координата y.
      */
     public double getY() {
         return y;
     }
 
     /**
-     * Sets the coordinates of the point.
+     * Устанавливает координаты точки.
      *
-     * @param x The new x-coordinate.
-     * @param y The new y-coordinate.
+     * @param x Новая координата x.
+     * @param y Новая координата y.
      */
     public void setCoordinates(double x, double y) {
         this.x = x;
@@ -43,21 +43,21 @@ public class Point {
     }
 
     /**
-     * Calculates the distance to another point.
+     * Вычисляет расстояние до другой точки.
      *
-     * @param other The other point.
-     * @return The distance between the two points.
+     * @param other Другая точка.
+     * @return Расстояние между двумя точками.
      */
     public double distanceTo(Point other) {
-        return Math.sqrt(Math.pow(this.x - other.getX(), 2) + Math.pow(this.y - other.getY(), 2));
+        return Math.sqrt(Math.pow(this.getX() - other.getX(), 2) + Math.pow(this.getY() - other.getY(), 2));
     }
 
     /**
-     * Rotates the point around a center by a given angle in degrees.
+     * Поворачивает точку вокруг заданного центра на заданный угол в градусах.
      *
-     * @param centerX     The x-coordinate of the center of rotation.
-     * @param centerY     The y-coordinate of the center of rotation.
-     * @param angleDegrees The angle of rotation in degrees.
+     * @param centerX Координата x центра вращения.
+     * @param centerY Координата y центра вращения.
+     * @param angleDegrees Угол поворота в градусах.
      */
     public void rotate(double centerX, double centerY, double angleDegrees) {
         double angleRadians = Math.toRadians(angleDegrees);
@@ -68,9 +68,9 @@ public class Point {
     }
 
     /**
-     * Returns a string representation of the Point object.
+     * Возвращает строковое представление объекта Point.
      *
-     * @return A string representation of the point.
+     * @return Строковое представление точки.
      */
     @Override
     public String toString() {

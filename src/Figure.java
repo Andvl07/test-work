@@ -1,48 +1,45 @@
-import java.util.List;
 import java.util.ArrayList;
-import java.awt.Point;
-
+import java.util.List;
 
 /**
- * Abstract class representing a geometric figure.
+ * Абстрактный класс, представляющий геометрическую фигуру.
  */
 public abstract class Figure {
     protected List<Point> points;
 
     /**
-     * Constructs a Figure object with the given points.
+     * Создает объект Figure с заданными точками.
      *
-     * @param points An array of Point objects representing the vertices of the figure.
-     * @throws IllegalArgumentException if the figure has less than 3 points.
+     * @param points Список объектов Point, представляющих вершины фигуры.
+     * @throws IllegalArgumentException если у фигуры меньше 3 точек.
      */
     public Figure(List<Point> points) {
-        if (points.size() < 3) {
-            throw new IllegalArgumentException("Figure must have at least 3 points.");
+        if (points == null || points.size() < 3) {
+            throw new IllegalArgumentException("У фигуры должно быть не менее 3 точек.");
         }
-        this.points = new ArrayList<>(points); // Copy points to avoid modification of original list
+        this.points = new ArrayList<>(points);
     }
 
-
     /**
-     * Gets the list of points that define the figure.
+     * Возвращает список точек, определяющих фигуру.
      *
-     * @return The list of points.
+     * @return Список точек.
      */
     public List<Point> getPoints() {
-        return new ArrayList<>(points); // Return a copy to prevent modification
+        return new ArrayList<>(points); // Return a copy
     }
 
     /**
-     * Calculates the perimeter of the figure.  This is an abstract method, so subclasses must implement it.
+     * Вычисляет периметр фигуры. Это абстрактный метод, поэтому подклассы должны его реализовать.
      *
-     * @return The perimeter of the figure.
+     * @return Периметр фигуры.
      */
     public abstract double perimeter();
 
     /**
-     * Rotates the entire figure around the first point by the given angle in degrees.
+     * Поворачивает всю фигуру вокруг первой точки на заданный угол в градусах.
      *
-     * @param angleDegrees The angle of rotation in degrees.
+     * @param angleDegrees Угол поворота в градусах.
      */
     public void rotate(double angleDegrees) {
         Point firstPoint = points.get(0);
@@ -52,13 +49,13 @@ public abstract class Figure {
     }
 
     /**
-     * Returns a string representation of the Figure object.
+     * Возвращает строковое представление объекта Figure.
      *
-     * @return A string representation of the figure.
+     * @return Строковое представление фигуры.
      */
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Figure with points: ");
+        StringBuilder sb = new StringBuilder("Фигура с точками: ");
         for (Point point : points) {
             sb.append(point.toString()).append(", ");
         }

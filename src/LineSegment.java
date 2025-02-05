@@ -1,14 +1,12 @@
-import java.awt.Point;
-
 public class LineSegment {
     private Point point1;
     private Point point2;
 
     /**
-     * Constructs a LineSegment object with the given endpoints.
+     * Создает объект LineSegment с заданными конечными точками.
      *
-     * @param point1 The first endpoint.
-     * @param point2 The second endpoint.
+     * @param point1 Первая конечная точка.
+     * @param point2 Вторая конечная точка.
      */
     public LineSegment(Point point1, Point point2) {
         this.point1 = point1;
@@ -16,39 +14,40 @@ public class LineSegment {
     }
 
     /**
-     * Gets the first endpoint of the line segment.
+     * Возвращает первую конечную точку отрезка.
      *
-     * @return The first endpoint.
+     * @return Первая конечная точка.
      */
     public Point getPoint1() {
         return point1;
     }
 
     /**
-     * Gets the second endpoint of the line segment.
+     * Возвращает вторую конечную точку отрезка.
      *
-     * @return The second endpoint.
+     * @return Вторая конечная точка.
      */
     public Point getPoint2() {
         return point2;
     }
 
     /**
-     * Calculates the length of the line segment.
+     * Вычисляет длину отрезка.
      *
-     * @return The length of the line segment.
+     * @return Длина отрезка.
      */
     public double length() {
         return point1.distanceTo(point2);
     }
 
     /**
-     * Returns a string representation of the LineSegment object.
+     * Возвращает строковое представление объекта LineSegment.
      *
-     * @return A string representation of the line segment.
+     * @return Строковое представление отрезка.
      */
     @Override
     public String toString() {
         return "LineSegment: Point1 = " + point1 + ", Point2 = " + point2;
     }
 }
+
